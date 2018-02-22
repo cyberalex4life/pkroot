@@ -1,8 +1,8 @@
 # pkroot
-##### Description:
+### Description:
 Scripts and policy suite to run almost everything with visual Polkit authentification in Bash.
 
-### Installation:
+### Installation
 ```
 $ git clone https://github.com/cyberalex4life/pkroot.git
 $ cd pkroot
@@ -15,7 +15,7 @@ $ ! [ -d "/usr/local/bin" ] && sudo mkdir -p /usr/local/bin || echo 'Folder exis
 $ sudo cp -t /usr/local/bin runwithpkexec pkroot
 ```
 
-##### To uninstall
+### To uninstall
 ```
 $ sudo rm -fv /usr/local/bin/{runwithpkexec,pkroot} /usr/share/polkit-1/actions/org.freedesktop.policykit.pkexec.runwithpkexec.policy
 ```
