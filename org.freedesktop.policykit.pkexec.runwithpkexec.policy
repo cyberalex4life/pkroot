@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE policyconfig PUBLIC
- "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
- "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
 
-  
 
- <vendor>runwithpkexec</vendor>
- <vendor_url>http://localhost/</vendor_url>
+ <vendor>Alexandru-Catalin Petrini</vendor>
+ <vendor_url>https://github.com/cyberalex4life/</vendor_url>
 
 
  <action id="org.freedesktop.policykit.pkexec.runwithpkexec">
- 
- <description>Run as root</description>
 
- <message>Authentication to run as root.</message>
+ <description>Wrap any command for pkexec under the unique name 'runwithpkexec'. Put this in '/usr/share/polkit-1/actions'</description>
+
+ <message>Authentication to run this application as root.</message>
  <defaults>
  <allow_any>no</allow_any>
  <allow_inactive>auth_admin</allow_inactive>
  <allow_active>auth_admin</allow_active>
  </defaults>
- <annotate key="org.freedesktop.policykit.exec.path">/opt/scripts/runwithpkexec</annotate>
+ <!-- It is important to that the path of runwithpkexec correspond to the path mentioned here -->
+ <annotate key="org.freedesktop.policykit.exec.path">/usr/local/bin/runwithpkexec</annotate>
+ <!-- We also want to be able to execute applications with graphical interfaces -->
  <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
  </action>
 

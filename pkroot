@@ -1,2 +1,27 @@
 #! /bin/bash
-pkexec /opt/scripts/runwithpkexec "$@"
+
+# pkroot
+#
+# wrapper for 'pkexec runwithpkexec'
+#
+# Copyright (C) 2018  Alexandru-Catalin Petrini (alexandru.c.petrini@gmail.com)
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, version 3 of the License.
+
+# This program is distributed in the hope that it will be useful,# # #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>
+
+# 'pkexec' must be passed the exact path location of 'runwithpkexec'
+#  as mentioned in 'org.freedesktop.policykit.pkexec.runwithpkexec.policy' file
+#  and 'runwithpkexec' must actually be placed in this location for pkroot
+#  to work properly.
+runwithpkexec_path="/usr/local/bin/runwithpkexec"
+
+pkexec $runwithpkexec_path "$@"
