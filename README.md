@@ -45,7 +45,7 @@ To further simplify our commands, we add another container script, 'pkroot':
 #! /bin/bash
 pkexec runwithpkexec "$@"
 ```
-So now we only have to use a single word instead of two to run our commands with Polkit.
+Such that we only have to use a single word instead of two to run our commands with Polkit.
 
 Some issues over different distro's suggested it would be best to execute 'runwithpkexec' using the entire installation path. that is why the actual script in this repo looks differently.
 
