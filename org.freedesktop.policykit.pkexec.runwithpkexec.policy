@@ -19,7 +19,7 @@
  <allow_active>auth_admin</allow_active>
  </defaults>
  <!-- It is important to that the path of runwithpkexec correspond to the path mentioned here -->
- <annotate key="org.freedesktop.policykit.exec.path">/usr/local/bin/runwithpkexec</annotate>
+ <annotate key="org.freedesktop.policykit.exec.path">/opt/scripts/runwithpkexec</annotate>
  <!-- We also want to be able to execute applications with graphical interfaces -->
  <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
  </action>

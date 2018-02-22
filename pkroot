@@ -22,7 +22,7 @@
 #  as mentioned in 'org.freedesktop.policykit.pkexec.runwithpkexec.policy' file
 #  and 'runwithpkexec' must actually be placed in this location for pkroot
 #  to work properly.
-runwithpkexec_path="/usr/local/bin/runwithpkexec"
+runwithpkexec_path="/opt/scripts/runwithpkexec"
 print_help() {
         printf " \n %-5s\n\n" "Help: "
         printf " %10s %-40s %-10s\n" "" "pkroot -h --help" "Show help"
