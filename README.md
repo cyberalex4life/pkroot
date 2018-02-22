@@ -56,4 +56,4 @@ If you want to place your scripts in other locations you must be sure
 * that 'pkroot' holds the entire path of 'runwithpkexec', especially if it is not placed in global PATH variable locations,
 * that 'org.freedesktop.policykit.pkexec.runwithpkexec.policy' holds this path in '`<annotate key="org.freedesktop.policykit.exec.path">/usr/local/bin/runwithpkexec</annotate>`'.
 
-*Note** that 'pkroot' may be placed in a different location than the  install location of 'runwithpkexec'.
+**Note** that 'pkroot' may be placed in a different location than the  install location of 'runwithpkexec'.
