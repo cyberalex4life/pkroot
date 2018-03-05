@@ -21,7 +21,7 @@
  <!-- It is important to that the path of runwithpkexec correspond to the path mentioned here -->
  <annotate key="org.freedesktop.policykit.exec.path">/opt/scripts/runwithpkexec</annotate>
  <!-- We also want to be able to execute applications with graphical interfaces -->
- <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+ <annotate key="org.freedesktop.policykit.exec.allow_gui">TRUE</annotate>
  </action>
 
 </policyconfig>
