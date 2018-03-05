@@ -3,6 +3,7 @@
 Scripts and policy suite to run almost everything with visual Polkit authentification in Bash.
 
 ### Installation
+##### Full installation
 ```
 $ git clone https://github.com/cyberalex4life/pkroot.git
 $ cd pkroot
@@ -14,6 +15,23 @@ $ ! [ -d "/usr/local/bin" ] && sudo mkdir -p /usr/local/bin || echo 'Folder exis
 
 $ sudo cp -t /usr/local/bin runwithpkexec pkroot
 ```
+##### Just as a wrapper to run a single command with 'pkexec' in the background
+For this you only need to put **pkroot** in a location from PATH variable:
+```
+$ chmod a+x runwithpkexec
+
+## If "/usr/local/bin" does not exist, create it ##
+$ ! [ -d "/usr/local/bin" ] && sudo mkdir -p /usr/local/bin || echo 'Folder exists'
+
+$ sudo cp -t /usr/local/bin pkroot
+```
+Then run your command with
+```
+pkroot -d [command]
+```
+**Note** that only one command will work and that it needs a custom `*.policy` file placed in `/usr/share/polkit-1/actions`.
+
+This is useful if you want to bypass "Refusing to render service to dead parents."
 
 ### To uninstall
 ```
