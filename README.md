@@ -3,7 +3,7 @@
 Scripts and policy suite to run almost everything with visual Polkit authentification in Bash.
 
 ### Installation
-##### Full installation
+#### Full installation
 ```
 $ git clone https://github.com/cyberalex4life/pkroot.git
 $ cd pkroot
@@ -15,7 +15,7 @@ $ ! [ -d "/usr/local/bin" ] && sudo mkdir -p /usr/local/bin || echo 'Folder exis
 
 $ sudo cp -t /usr/local/bin runwithpkexec pkroot
 ```
-##### Just as a wrapper to run a single command with 'pkexec' in the background
+#### Just as a wrapper to run a single command with 'pkexec' in the background
 For this you only need to put **pkroot** in a location from PATH variable:
 ```
 $ chmod a+x runwithpkexec
