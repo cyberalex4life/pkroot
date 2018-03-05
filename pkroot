@@ -26,12 +26,24 @@ runwithpkexec_path="/usr/local/bin/runwithpkexec"
 print_help() {
         printf " \n %-5s\n\n" "Help: "
         printf " %10s %-40s %-10s\n" "" "pkroot -h --help" "Show help"
-        printf " %10s %-40s \n" "" "pkroot [command]"
-        printf " %10s %-40s \n" "" "pkroot \"[command1];[command2];..\""
-        printf " %10s %-40s \n\n" "" "pkroot '[command1];[command2];..'"
+        printf " %10s %-40s %-10s\n" "" "pkroot [command]" "Run command requesting passwording"
+        printf " %10s %-40s %-10s\n" "" "pkroot \"[command1];[command2];..\"" "Run multiple commands (as one) requesting passwording"
+        printf " %10s %-40s %-10s\n" "" "pkroot '[command1];[command2];..'" "Run multiple commands (as one) requesting passwording"
+        printf " %10s %-40s %-10s\n" "" "pkroot -d [command]" "Run command directly, where command is passed directly to pkexec."
+        printf " %10s %-40s %-10s\n" "" ""                    "Usefull to bypass \"Refusing to render service to dead parents.\","
+        printf " %10s %-40s %-10s\n" "" ""                    "when trying to run a process in the background, which pkexec does not allow."
+        printf " %10s %-40s %-10s\n" "" ""                    "Process needs it's own policy file which decides if pkexec runs process as root,"
+        printf " %10s %-40s %-10s\n" "" ""                    "asking for password or without password"
 }
-if [ "$1" == "-h" -o "$1" == "--help" ]; then
-        print_help
-        exit 0
+arg1="$1"
+args="$@"
+if [ "$arg1" == "-h" -o "$arg1" == "--help" ]; then
+    print_help
+    exit 0
+elif [ "$arg1" == "-d" -o "$arg1" == "--directly" ]; then
+    # Remove "-d" from the list of argumets passed to pkexec
+    args=${args//$arg1/}
+    pkexec $args
+    exit 0
 fi
 pkexec $runwithpkexec_path "$@"
