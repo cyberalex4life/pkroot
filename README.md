@@ -31,7 +31,7 @@ pkroot -d [command]
 ```
 **Note** that only one command will work and that it needs a custom `*.policy` file placed in `/usr/share/polkit-1/actions`.
 
-This is useful if you want to bypass "Refusing to render service to dead parents."
+This is useful if you want to bypass ``Refusing to render service to dead parents.``
 
 ### To uninstall
 ```
